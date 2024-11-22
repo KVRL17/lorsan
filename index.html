@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+     <title>Lorsan Training</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">    
+	<link rel="stylesheet" href="css/styles.css">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	
+	<style>
+		.text_align_center {
+		text-align: center;
+		
+		 /* Aligns text horizontally */
+	}
+	.heading_main h2 {
+    font-weight: bold; /* Makes the text bold */
+    font-size: 2rem;   /* Adjust the size as needed */
+}
+
+.heading_main h2 span {
+    font-weight: bold; /* Ensures the "Our" part is also bold */
+}
+	.heading_main {
+		display: flex;
+		justify-content: center; /* Centers the heading horizontally */
+		align-items: center; /* Centers the heading vertically if needed */
+		flex-direction: column; /* Ensures proper stacking of text */
+	}
+		.title {
+		margin-top: 20px; /* Adjusts space above the title */
+		color: #4a90e2; /* Change this to your desired color */
+		font-size: 32px; /* Adjust the font size if needed */
+		text-align: center; 
+		font-weight: bold;/* Centers the title */
+	}
+	.image-gallery {
+		border: 2px solid #4a90e2; /* Border color and thickness */
+		border-radius: 15px; /* Rounded corners */
+		padding: 20px; /* Space inside the box */
+		background-color: #f9f9f9; /* Optional: background color */
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
+		margin-bottom: 20px; /* Space below the gallery */
+	}
+	.navbar-nav .nav-item {
+		margin: 0 10px; /* Adjust spacing to reduce width */
+		white-space: nowrap; /* Prevent wrapping */
+	}
+	
+	
+	</style>
+	<style>
+		.cover-slides1 {
+			position: relative;
+			height: 100vh; /* Full-screen height */
+			overflow: hidden;
+			background: #000; /* Fallback background */
+		}
+	
+		.cover-slides1 img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover; /* Ensures the image covers the container */
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+	
+		.cover-slides1 .overlay-content {
+			position: absolute;
+			top: 50%; /* Centers the text vertically */
+			left: 50%; /* Centers the text horizontally */
+			transform: translate(-50%, -50%); /* Centers text perfectly */
+			color: #fff; /* White text for contrast */
+			z-index: 2; /* Place text above the image */
+			text-align: center; /* Center-align text */
+		}
+	
+		.cover-slides1 h1 {
+			font-size: 3rem; /* Adjust font size */
+			margin-bottom: 1rem;
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Optional: Text shadow for better readability */
+		}
+	
+		.cover-slides1 p {
+			font-size: 1.5rem;
+			margin-bottom: 1.5rem;
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Same shadow for consistency */
+		}
+	
+		.cover-slides1 a.btn {
+			color: #fff;
+			background: #3498db; /* Button background color */
+			padding: 10px 20px;
+			border-radius: 30px;
+			text-decoration: none;
+			transition: all 0.3s ease;
+		}
+	
+		.cover-slides1 a.btn:hover {
+			background: #010101; /* Hover effect */
+		}
+		@media (max-width: 768px) {
+    .cover-slides1 h1 {
+        font-size: 2rem;
+    }
+    .cover-slides1 p {
+        font-size: 1rem;
+    }
+}
+	</style>
+	<style>
+		/* Custom styles for the container */
+		 .resort-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 80vh;
+			background-image: url('path_to_background_image.jpg'); /* Replace with an appropriate background image URL */
+		   background-size: cover;
+			background-position: center;
+		}  
+	
+		.resort-card {
+			background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for better readability */
+		  border-radius: 8px;
+			padding: 20px;
+			margin: 15px;
+			max-width: 400px;
+			text-align: center;
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+		} 
+		.resort-card h3 {
+			font-weight: bold;
+			color: #333;
+		}
+	
+		.resort-card p {
+			color: #666;
+		}
+		.enquire-image {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	}
+	.title {
+	 margin-top: 50px; /* Adjusts space above the title */
+	 color: #4a90e2; /* Change this to your desired color */
+	 font-size: 32px; /* Adjust the font size if needed */
+	 text-align: center; 
+	 font-weight: bold;/* Centers the title */
+	}
+	body {
+		background-image: url('images/5968949.jpg'); /* Image path */
+		background-size: cover; /* Cover the whole page */
+		background-position: center center; /* Center the image */
+		background-attachment: fixed; /* Keep the background fixed during scrolling */
+		height: 100vh; /* Make the body take the full viewport height */
+		margin: 0; /* Remove default margin */
+		color: black; /* Text color to stand out on background */
+	}
+	.cottage-card {
+		border: 2px solid black; /* You can adjust the color and thickness */
+		/* border-radius: 15px; Optional: add rounded corners */
+		/* padding: 20px; Add some padding inside */
+	}
+	</style>
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="images/images/Lorsan Logo.png" alt="" style="height: 50px;"/>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item "><a class="nav-link" href="index.html">HOME</a></li>
+						<li class="nav-item"><a class="nav-link" href="aboutus.html">ABOUT US</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">SERVICES</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="corporatetraining.html">CORPORATE TRAINING</a>
+								<a class="dropdown-item" href="personalcoaching.html">PERSONAL COACHING</a>
+								<!-- <div class="dropdown-submenu">
+									<ul>
+										<li><a class="dropdown-item" href="business-body-language.html">Business Body Language</a></li>
+										<li><a class="dropdown-item" href="brain-performance.html">Brain Performance Coaching</a></li>
+									</ul>
+								</div> -->
+								  
+								<a class="dropdown-item" href="geneticbrainprofiling.html">GENETIC BRAIN PROFILING</a>
+							</div>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="media.html">MEDIA</a></li>
+						<li class="nav-item"><a class="nav-link" href="contactus.html">CONTACT US</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+
+	<div class="cover-slides1">
+		<img src="images/banner1 (2).jpg" alt="Banner Image">
+		<div class="overlay-content">
+			
+			<h1>Welcome to Lorsan Training</h1>
+			<!-- <p>Empowering you with knowledge and skills for a better future</p> -->
+			<a href="contactus.html" class="btn">CONTACT US</a>
+		</div>
+	</div>
+	<!-- end slides -->
+
+	
+	 
+    <!-- End Banner -->
+
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<img style="border: 3px solid black;"src="images/aboutus (2).jpg" alt="" class="img-fluid">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
+					<div class="inner-column">
+						<h1>About <span>Lorsan Training</span></h1>
+						<p>LORSAN TRAINING CO. is a specialized training company for School / College Facilitators, College Students, Manufacturing & Service Industry. Established by a group of professionals with industrial and service industry knowledge. Meticulous research has been done to offer spring board options for a promising career to the young generation of today. LORSAN provides Trainings in skill development, competency enhancement & life improving career opportunities through quality input at an affordable price. Its wings are spread across pan India. We operate under 3 verticals i.e., Skills Development, Training Concepts and Consultancy.</p>
+						<a class="btn btn-lg btn-circle btn-outline-new-white" href="aboutus.html">Read More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Services page start -->
+    <div class="cottages-wrapper">
+        <section class="cottages-section">
+         
+			<h1><strong>Our Services</strong></h1>
+            <div class="cottages-container">
+				
+                <!-- <div class="cottage-card">
+                    <img src="images/images/resturant.jpg" alt="Restaurant">
+                    <h3>Restaurant</h3>
+                    <p>Maanya Resorts' restaurant serves a diverse menu with Indian, Chinese, Tandoori, Andhra, and South Indian cuisines.</p>
+                    <button><a href="facilitiesdesc.html" style="text-decoration: none;color: white;"> Know More</button>
+                    </div> -->
+                <div class="cottage-card">
+                    <img src="images/corporate-trainer.jpg" alt="Corporate Training">
+                    <h3><strong>Corporate Training</strong></h3>
+                    <p>
+						Corporate training enhances employees' skills, knowledge, and performance to boost workplace productivity. It covers areas like leadership, communication, conflict resolution, and technical expertise. Tailored to business needs, it aims to improve morale, foster continuous learning, and support organizational growth.</p>
+                    <button><a href="corporatetraining.html" style="text-decoration: none;color: white;"> <strong>Know More</strong></button>
+                    </div>
+					<div class="cottage-card">
+						<img src="images/personaldevelopment.jpg" alt="Personal Coaching">
+						<h3><strong>Personal Coaching</strong></h3>
+						<p>Personal coaching is a one-on-one process that helps individuals achieve goals, improve self-awareness, and overcome challenges. It focuses on structured goal-setting, leveraging strengths, and fostering mindset shifts. This approach promotes personal growth, builds confidence, and supports success in various aspects of life.</p>
+						<button><a href="personalcoaching.html" style="text-decoration: none;color: white;"> <strong>Know More</strong></button>
+						</div>
+						<div class="cottage-card">
+							<img src="images/geneticbrainprofiling.png" alt="Genetic Brain Profiling">
+							<h3><strong>Genetic Brain Profiling </strong></h3>
+							<p>Genetic Brain Profiling is a scientifically proven method to understand one’s innate abilities, challenges. It throughs light on each person’s inborn abilities. After two years anyone can avail this opportunity to have a clear pathway for their education, career, business preference and recruit employees for their business.
+
+							</p>
+							<button><a href="geneticbrainprofiling.html" style="text-decoration: none;color: white;"><strong>Know More</strong></button>
+							</div>
+					</div>
+					
+		</div>
+        </section>
+    </div>    
+	<center><a class="btn btn-lg btn-circle btn-outline-new-white" style="background-color: hsl(133, 92%, 39%);" href="facilitiesdesc.html">Know More</a></center>
+	
+<br>
+
+	<div class="col-md-12">
+		<div class="full">
+			<div class="heading_main text_align_center">
+				<h2><span>Our </span>Experience</h2>
+			</div>
+		</div>
+	</div>
+    <iframe src="sliding.html" width="100%" height="310px" style="border:none;"></iframe>
+	 <!-- section -->
+    
+	
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 col-md-6">
+					<h3>For Reservation</h3>
+					<p class="lead"><span style="color: #3498db;"> Visit Us: </span> NO.2, Gopi Garden (Behind Titan Watches), Hosur - 635 126, Tamil Nadu.</p>
+					<p class="lead"><a href="#"><span style="color: #3498db;"> Call Us: </span>+91 9786224994</a></p>
+					
+					<p><a href="#"><span style="color: #3498db;">Mail Us: </span> lorsantraining@gmail.com</a></p>
+					
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h3>Quick Links</h3>
+					<p><span class="text-color"><a href="">Home</a></span></p>
+					<p><span class="text-color"><a href="">About Us</a></span></p>
+					<p><span class="text-color"><a href="">Services</a></span></p>
+					<p><span class="text-color"><a href="">Media</a></span></p>
+					<p><span class="text-color"><a href="">Contact Us</a></span></p>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<ul class="list-inline f-social">
+						<li class="list-inline-item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name">
+							All Rights Reserved. &copy; <span id="currentYear"></span> 
+							<a href="#">Lorsan Training</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</footer>
+	<!-- End Footer -->
+	
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+	<!-- ALL JS FILES -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	
+	<script src="js/jquery.superslides.min.js"></script>
+	<script src="js/images-loded.min.js"></script>
+	<script src="js/isotope.min.js"></script>
+	<script src="js/baguetteBox.min.js"></script>
+	<script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script>
+	<script>
+		document.getElementById("currentYear").textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>
