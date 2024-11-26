@@ -177,6 +177,7 @@ button:focus{
 	font-size: 18px;
 	padding: 0px 20px;
 	border-radius: 4px;
+    font-weight: bold;
 }
 
 .top-navbar .navbar-light .navbar-nav .nav-item .nav-link:hover{
@@ -309,7 +310,7 @@ button:focus{
 }
 
 .cottage-card button {
-    background-color: #3498db;
+    background-color:#663399;
     color: white;
     border: none;
     border-radius: 4px;

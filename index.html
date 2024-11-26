@@ -223,6 +223,235 @@
 			</div>
 		</nav>
 	</header>
+<!-- code for api
+	 -->
+	 <div class="modal" id="enquiryModal">
+		<div class="modal-content">
+		  <button class="close-btn" onclick="closeModal()">&times;</button>
+		  <h2>Enquiry</h2>
+		  <form id="contactform" 
+			action="https://formsubmit.co/renotechins@gmail.com" 
+			method="POST" 
+			enctype="multipart/form-data"
+			onsubmit="return updateSubject()">
+			<input type="hidden" name="_captcha" value="false">
+			<input type="hidden" name="_subject" id="subject" value="Contact Information From Submission">
+			<input type="hidden" name="_template" value="table">
+			<input type="hidden" name="_next" value="https://renotech.ai/thankyou.html">
+	  
+			<div class="row g-3">
+			  <div class="col-md-6">
+				<div class="form-floating">
+				  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+				  <label for="name">Your Name</label>
+				  <small class="text-danger" id="nameError"></small>
+				</div>
+			  </div>
+			  <div class="col-md-6">
+				<div class="form-floating">
+				  <input type="text" name="phone" class="form-control" id="phone" placeholder="Your Phone">
+				  <label for="phone">Your Phone</label>
+				  <small class="text-danger" id="phoneError"></small>
+				</div>
+			  </div>
+			  <div class="col-12">
+				<div class="form-floating">
+				  <input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
+				  <label for="email">Your Email</label>
+				  <small class="text-danger" id="emailError"></small>
+				</div>
+			  </div>
+			  <div class="col-12">
+				<div class="form-floating">
+				  <textarea name="message" class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+				  <label for="message">Message</label>
+				  <small class="text-danger" id="messageError"></small>
+				</div>
+			  </div>
+			  <div class="col-12">
+				<button id="submittBtn" class="btn btn-primary w-100 py-3" type="submit" disabled>Send Message</button>
+			  </div>
+			</div>
+		  </form>
+		</div>
+	  </div>
+	  
+	  <script>
+		const form = document.getElementById('contactform');
+		const fields = ['name', 'email', 'phone', 'message'];
+		const submitButton = document.getElementById('submittBtn');
+		const patterns = {
+		  name: /^[a-zA-Z\s]{3,}$/,
+		  email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+		  phone: /^[0-9]{10}$/,
+		  message: /.+/
+		};
+	  
+		function validateField(field) {
+		  const input = document.getElementById(field);
+		  const errorElement = document.getElementById(`${field}Error`);
+		  if (patterns[field].test(input.value)) {
+			errorElement.textContent = '';
+			return true;
+		  } else {
+			errorElement.textContent = `Please enter a valid ${field.replace('_', ' ')}.`;
+			return false;
+		  }
+		}
+	  
+		function checkAllFields() {
+		  let allValid = true;
+		  fields.forEach((field) => {
+			const valid = validateField(field);
+			if (!valid) allValid = false;
+		  });
+		  submitButton.disabled = !allValid;
+		  return allValid;
+		}
+	  
+		fields.forEach((field) => {
+		  const input = document.getElementById(field);
+		  input.addEventListener('input', () => {
+			validateField(field);
+			checkAllFields();
+		  });
+		});
+	  
+		function updateSubject() {
+		  const name = document.getElementById('name').value.trim();
+		  const subjectField = document.getElementById('subject');
+		  if (name) {
+			subjectField.value = `New Contact Information From ${name}`;
+		  }
+		  const isValid = checkAllFields();
+		  if (!isValid) {
+			alert('Please fill all fields correctly.');
+			return false;
+		  }
+		  closeModal();
+		  return true;
+		}
+	  
+		function showModal() {
+		  document.getElementById('enquiryModal').style.display = 'flex';
+		}
+	  
+		function closeModal() {
+		  document.getElementById('enquiryModal').style.display = 'none';
+		}
+	  </script>
+	  
+	 <!-- <div class="modal" id="enquiryModal">
+		<div class="modal-content">
+		  <button class="close-btn" onclick="closeModal()">&times;</button>
+		  <h2>Enquiry</h2>
+		  <form id="contactform" 
+  action="https://formsubmit.co/renotechins@gmail.com" 
+  method="POST" 
+  enctype="multipart/form-data"
+  onsubmit="return updateSubject()">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" id="subject" value="Contact Information From Submission">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="https://renotech.ai/thankyou.html">
+
+<div class="row g-3">
+<div class="col-md-6">
+  <div class="form-floating">
+	<input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+	<label for="name">Your Name</label>
+	<small class="text-danger" id="nameError"></small>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="form-floating">
+	<input type="text" name="phone" class="form-control" id="phone" placeholder="Your Phone">
+	<label for="phone">Your Phone</label>
+	<small class="text-danger" id="phoneError"></small>
+  </div>
+</div>
+<div class="col-12">
+  <div class="form-floating">
+	<input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
+	<label for="email">Your Email</label>
+	<small class="text-danger" id="emailError"></small>
+  </div>
+</div>
+<div class="col-12">
+  <div class="form-floating">
+	<textarea name="message" class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+	<label for="message">Message</label>
+	<small class="text-danger" id="messageError"></small>
+  </div>
+</div>
+<div class="col-12">
+  <button id="submittBtn" class="btn btn-primary w-100 py-3" type="submit" disabled>Send Message</button>
+</div>
+</div>
+</form>
+
+<script>
+const form = document.getElementById('contactform');
+const fields = ['name', 'email', 'phone', 'message'];
+const submitButton = document.getElementById('submittBtn');
+
+const patterns = {
+name: /^[a-zA-Z\s]{3,}$/,
+email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+phone: /^[0-9]{10}$/,
+message: /.+/
+};
+
+function validateField(field) {
+const input = document.getElementById(field);
+const errorElement = document.getElementById(${field}Error);
+if (patterns[field].test(input.value)) {
+  errorElement.textContent = '';
+  return true;
+} else {
+  errorElement.textContent = Please enter a valid ${field.replace('_', ' ')}.;
+  return false;
+}
+}
+
+function checkAllFields() {
+let allValid = true;
+fields.forEach((field) => {
+  const valid = validateField(field);
+  if (!valid) allValid = false;
+});
+submitButton.disabled = !allValid;
+}
+
+fields.forEach((field) => {
+const input = document.getElementById(field);
+input.addEventListener('input', () => {
+  validateField(field);
+  checkAllFields();
+});
+});
+
+function updateSubject() {
+const name = document.getElementById('name').value.trim();
+const subjectField = document.getElementById('subject');
+if (name) {
+  subjectField.value = New Contact Information From ${name};
+}
+return checkAllFields();
+}
+</script>
+		</div>
+	  </div>
+	  
+	  <script>
+		function showModal() {
+		  document.getElementById('enquiryModal').style.display = 'flex';
+		}
+	  
+		function closeModal() {
+		  document.getElementById('enquiryModal').style.display = 'none';
+		}
+	  </script> -->
 	<!-- End header -->
 	<!-- <div class="about-section-box"> -->
 		<!-- <div class="container">
@@ -244,11 +473,12 @@
 		</div>  -->
 	<!-- </div> -->
     <div class="cover-slides1">
-		<img src="images/banner2.jpg" alt="Banner Image">
+		<img src="images/lorsantraiingbanners.jpg" alt="Banner Image">
 		<div class="overlay-content">
-			<h1>Welcome to Lorsan Training</h1>
+			<h1>Corporate Trainings</h1>
+			<p>Enhance Communication and Interpersonal Skills, Build Confidence, Foster Emotional Intelligence</p>
+			<button class="btn btn-primary" style="background-color: #663399; color: #FFFFFF;" onclick="showModal()" class="btn">Enquiry</button>
 			
-			<a href="contactus.html" class="btn">CONTACT US</a>
 		</div>
 	</div>
 	<!-- end slides -->
@@ -272,7 +502,9 @@
 						<p>LORSAN TRAINING CO. is a specialized training company for School / College Facilitators, College Students, Manufacturing & Service Industry. Established by a group of professionals with industrial and service industry knowledge. Meticulous research has been done to offer spring board options for a promising career to the young generation of today. LORSAN provides Trainings in skill development, competency enhancement & life improving career opportunities through quality input at an affordable price. Its wings are spread across pan India. We operate under 3 verticals i.e., Skills Development, Training Concepts and Consultancy.<br><br>
                             
                            </p>
-						<a class="btn btn-lg btn-circle btn-outline-new-white" href="aboutus.html">Read More</a>
+						   
+						<a class="btn btn-primary" style="background-color: #663399; color: #FFFFFF;" href="aboutus.html">Read More</a>
+						
 					</div>
 				</div>
 			</div>
@@ -283,7 +515,7 @@
 
 <div class="cottages-wrapper">
 	<section class="cottages-section">
-		<h1><strong>Services</strong></h1>
+		<h1><strong>SERVICES</strong></h1>
 	   <div class="cottages-container">
 			<div class="cottage-card">
 				<img src="images/corporate-trainer.jpg" alt="Corporate Training">
@@ -314,7 +546,7 @@
 
 <br>
 
-<h2 class="text-center mb-5"><strong>Explore our<span> Clients </span>Says</strong></h2>
+<h2 class="text-center mb-5"><strong>Explore our<span> CLIENTS </span>Says</strong></h2>
 <!-- client list --><div>
 <iframe src="sliding.html" width="100%" height="310px" style="border:none;"></iframe></div>
  <!-- section -->
@@ -322,7 +554,7 @@
 
  <br>
 	
- <h2 class="text-center mb-5"><strong>Testimonials</strong></h2>
+ <h2 class="text-center mb-5"><strong>TESTIMONIALS</strong></h2>
  <div class="container testimonial-section">
 
 
@@ -385,8 +617,7 @@
 					<h3>For Reservation</h3>
 					<p class="lead"><span style="color: #3498db;"> Visit Us: </span> NO.2, Gopi Garden (Behind Titan Watches), Hosur - 635 126, Tamil Nadu.</p>
 					<p class="lead"><a href="#"><span style="color: #3498db;"> Call Us: </span>+91 9786224994</a></p>
-					
-					<p><a href="#"><span style="color: #3498db;">Mail Us: </span> lorsantraining@gmail.com</a></p>
+					<p class="lead"><a href="#"><span style="color: #3498db;">Mail Us: </span> lorsantraining@gmail.com</a></p>
 					
 				</div>
 				<div class="col-lg-3 col-md-6">
