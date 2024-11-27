@@ -1,72 +1,13 @@
 p {
     font-weight: 400;
-    text-align: justify; /* Justify the text for equal word spacing */
+    text-align: start; /* Justify the text for equal word spacing */
     line-height: 1.6; /* Controls spacing between lines of text */
     padding: 10px; /* Adds equal padding inside the <p> tag */
     letter-spacing: 0.5px; /* Adds spacing between individual characters */
     margin: 0; /* Removes default margin */
 }
 /* nav bar css */
-.cover-slides1 {
-    position: relative;
-    height: 100vh; /* Full-screen height */
-    overflow: hidden;
-    background: #000; /* Fallback background */
-}
 
-.cover-slides1 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the container */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.cover-slides1 .overlay-content {
-    position: absolute;
-    top: 50%; /* Centers the text vertically */
-    left: 50%; /* Centers the text horizontally */
-    transform: translate(-50%, -50%); /* Centers text perfectly */
-    color: #fff; /* White text for contrast */
-    z-index: 2; /* Place text above the image */
-    text-align: center; /* Center-align text */
-}
-
-.cover-slides1 h1 {
-    font-size: 3rem; /* Adjust font size */
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Optional: Text shadow for better readability */
-}
-
-.cover-slides1 p {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Same shadow for consistency */
-}
-
-.cover-slides1 a.btn {
-    color: #fff;
-    background: #3498db; /* Button background color */
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.cover-slides1 a.btn:hover {
-    background: #010101; /* Hover effect */
-}
-@media (max-width: 768px) {
-.cover-slides1 h1 {
-font-size: 2rem;
-}
-.cover-slides1 p {
-font-size: 1rem;
-}
-}
-/* nav bar css ends */
 
 /* div css */
 .container {
@@ -256,4 +197,57 @@ font-size: 1rem;
 
 .close-btn:hover {
   color: #0056b3;
+}
+
+/* Responsive CSS for mobile view */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 20px;
+  }
+
+  .modal-content input,
+  .modal-content textarea {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .modal-content button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .close-btn {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .modal-content h2 {
+    font-size: 18px;
+  }
+
+  .modal-content input,
+  .modal-content textarea {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .modal-content button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .close-btn {
+    font-size: 16px;
+  }
 }

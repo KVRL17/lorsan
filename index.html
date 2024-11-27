@@ -73,7 +73,7 @@
 		
 			p {
     font-weight: 400;
-    text-align: justify; /* Justify the text for equal word spacing */
+    text-align: start; /* Justify the text for equal word spacing */
     line-height: 1.6; /* Controls spacing between lines of text */
     padding: 10px; /* Adds equal padding inside the <p> tag */
     letter-spacing: 0.5px; /* Adds spacing between individual characters */
@@ -189,7 +189,6 @@
 </head>
 
 <body>
-	<!-- Start header -->
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
@@ -208,181 +207,64 @@
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 								<a class="dropdown-item" href="corporatetraining.html">CORPORATE TRAINING</a>
 								<a class="dropdown-item" href="personalcoaching.html">PERSONAL COACHING</a>
-								<!-- <div class="dropdown-submenu">
-									<ul>
-										<li><a class="dropdown-item" href="business-body-language.html">Business Body Language</a></li>
-										<li><a class="dropdown-item" href="brain-performance.html">Brain Performance Coaching</a></li>
-									</ul>
-								</div> -->
-								  
 								<a class="dropdown-item" href="geneticbrainprofiling.html">GENETIC BRAIN PROFILING</a>
 							</div>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="media.html">MEDIA</a></li>
 						<li class="nav-item"><a class="nav-link" href="contactus.html">CONTACT US</a></li>
 					</ul>
-				</div>
 			</div>
 		</nav>
 	</header>
-<!-- code for api
-	 -->
-	 <div class="modal" id="enquiryModal">
+	<!-- End header -->
+
+	<div class="whatsapp-icon">
+		<a href="https://wa.me/+919786224994?text=Hello,%20I%20would%20like%20to%20enquire%20about%20the%20Services%20in%20Lorsan%2Training%20Could%20you%20provide%20more%20details%20on%20available%20Services%20%20the%20process?" target="_blank">
+			<img src="./images/whatsapp-logo.png" alt="WhatsApp Icon">
+		</a>
+	</div>
+
+	
+	<div class="modal" id="enquiryModal">
 		<div class="modal-content">
-		  <button class="close-btn" onclick="closeModal()">&times;</button>
-		  <h2>Enquiry</h2>
+			<a onclick="closeModal()" style="text-align: right;cursor: progress;">X</a>
+			<h2>Enquiry</h2>
 		  <form id="contactform" 
-			action="https://formsubmit.co/renotechins@gmail.com" 
-			method="POST" 
-			enctype="multipart/form-data"
-			onsubmit="return updateSubject()">
-			<input type="hidden" name="_captcha" value="false">
-			<input type="hidden" name="_subject" id="subject" value="Contact Information From Submission">
-			<input type="hidden" name="_template" value="table">
-			<input type="hidden" name="_next" value="https://renotech.ai/thankyou.html">
-	  
-			<div class="row g-3">
-			  <div class="col-md-6">
-				<div class="form-floating">
-				  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
-				  <label for="name">Your Name</label>
-				  <small class="text-danger" id="nameError"></small>
-				</div>
-			  </div>
-			  <div class="col-md-6">
-				<div class="form-floating">
-				  <input type="text" name="phone" class="form-control" id="phone" placeholder="Your Phone">
-				  <label for="phone">Your Phone</label>
-				  <small class="text-danger" id="phoneError"></small>
-				</div>
-			  </div>
-			  <div class="col-12">
-				<div class="form-floating">
-				  <input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
-				  <label for="email">Your Email</label>
-				  <small class="text-danger" id="emailError"></small>
-				</div>
-			  </div>
-			  <div class="col-12">
-				<div class="form-floating">
-				  <textarea name="message" class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-				  <label for="message">Message</label>
-				  <small class="text-danger" id="messageError"></small>
-				</div>
-			  </div>
-			  <div class="col-12">
-				<button id="submittBtn" class="btn btn-primary w-100 py-3" type="submit" disabled>Send Message</button>
-			  </div>
-			</div>
-		  </form>
-		</div>
-	  </div>
-	  
-	  <script>
-		const form = document.getElementById('contactform');
-		const fields = ['name', 'email', 'phone', 'message'];
-		const submitButton = document.getElementById('submittBtn');
-		const patterns = {
-		  name: /^[a-zA-Z\s]{3,}$/,
-		  email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-		  phone: /^[0-9]{10}$/,
-		  message: /.+/
-		};
-	  
-		function validateField(field) {
-		  const input = document.getElementById(field);
-		  const errorElement = document.getElementById(`${field}Error`);
-		  if (patterns[field].test(input.value)) {
-			errorElement.textContent = '';
-			return true;
-		  } else {
-			errorElement.textContent = `Please enter a valid ${field.replace('_', ' ')}.`;
-			return false;
-		  }
-		}
-	  
-		function checkAllFields() {
-		  let allValid = true;
-		  fields.forEach((field) => {
-			const valid = validateField(field);
-			if (!valid) allValid = false;
-		  });
-		  submitButton.disabled = !allValid;
-		  return allValid;
-		}
-	  
-		fields.forEach((field) => {
-		  const input = document.getElementById(field);
-		  input.addEventListener('input', () => {
-			validateField(field);
-			checkAllFields();
-		  });
-		});
-	  
-		function updateSubject() {
-		  const name = document.getElementById('name').value.trim();
-		  const subjectField = document.getElementById('subject');
-		  if (name) {
-			subjectField.value = `New Contact Information From ${name}`;
-		  }
-		  const isValid = checkAllFields();
-		  if (!isValid) {
-			alert('Please fill all fields correctly.');
-			return false;
-		  }
-		  closeModal();
-		  return true;
-		}
-	  
-		function showModal() {
-		  document.getElementById('enquiryModal').style.display = 'flex';
-		}
-	  
-		function closeModal() {
-		  document.getElementById('enquiryModal').style.display = 'none';
-		}
-	  </script>
-	  
-	 <!-- <div class="modal" id="enquiryModal">
-		<div class="modal-content">
-		  <button class="close-btn" onclick="closeModal()">&times;</button>
-		  <h2>Enquiry</h2>
-		  <form id="contactform" 
-  action="https://formsubmit.co/renotechins@gmail.com" 
+  action="https://formsubmit.co/lorsantraining@gmail.com" 
   method="POST" 
   enctype="multipart/form-data"
   onsubmit="return updateSubject()">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_subject" id="subject" value="Contact Information From Submission">
 <input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="https://renotech.ai/thankyou.html">
+<input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
 
 <div class="row g-3">
 <div class="col-md-6">
   <div class="form-floating">
-	<input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
 	<label for="name">Your Name</label>
+	<input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
 	<small class="text-danger" id="nameError"></small>
   </div>
 </div>
 <div class="col-md-6">
   <div class="form-floating">
-	<input type="text" name="phone" class="form-control" id="phone" placeholder="Your Phone">
 	<label for="phone">Your Phone</label>
+	<input type="text" name="phone" class="form-control" id="phone" placeholder="Your Phone">
 	<small class="text-danger" id="phoneError"></small>
   </div>
 </div>
 <div class="col-12">
   <div class="form-floating">
-	<input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
 	<label for="email">Your Email</label>
+	<input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
 	<small class="text-danger" id="emailError"></small>
   </div>
 </div>
 <div class="col-12">
   <div class="form-floating">
-	<textarea name="message" class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
 	<label for="message">Message</label>
+	<textarea name="message" class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
 	<small class="text-danger" id="messageError"></small>
   </div>
 </div>
@@ -397,6 +279,7 @@ const form = document.getElementById('contactform');
 const fields = ['name', 'email', 'phone', 'message'];
 const submitButton = document.getElementById('submittBtn');
 
+// Validation Patterns
 const patterns = {
 name: /^[a-zA-Z\s]{3,}$/,
 email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -406,12 +289,12 @@ message: /.+/
 
 function validateField(field) {
 const input = document.getElementById(field);
-const errorElement = document.getElementById(${field}Error);
+const errorElement = document.getElementById(`${field}Error`);
 if (patterns[field].test(input.value)) {
   errorElement.textContent = '';
   return true;
 } else {
-  errorElement.textContent = Please enter a valid ${field.replace('_', ' ')}.;
+  errorElement.textContent = `Please enter a valid ${field.replace('_', ' ')}.`;
   return false;
 }
 }
@@ -437,52 +320,66 @@ function updateSubject() {
 const name = document.getElementById('name').value.trim();
 const subjectField = document.getElementById('subject');
 if (name) {
-  subjectField.value = New Contact Information From ${name};
+  subjectField.value = `New Contact Information From ${name}`;
 }
 return checkAllFields();
 }
 </script>
-		</div>
-	  </div>
-	  
-	  <script>
-		function showModal() {
-		  document.getElementById('enquiryModal').style.display = 'flex';
-		}
-	  
-		function closeModal() {
-		  document.getElementById('enquiryModal').style.display = 'none';
-		}
-	  </script> -->
-	<!-- End header -->
-	<!-- <div class="about-section-box"> -->
-		<!-- <div class="container">
-			<div class="row">
-				<div class="container my-5">
-                    <h2 class="title">ABOUT US</h2><br><br>
-                    <div class="col-md-6">
-                        <div class="full float-right_img">
-                            <img src="images/images/aboutpage.avif" alt="#" />
-                        </div>
-                    </div> -->
+</div>
+</div>
 
+<script>
+  function showModal() {
+	document.getElementById('enquiryModal').style.display = 'flex';
+  }
 
-
-
-                    
-				<!-- </div>
-			</div>
-		</div>  -->
-	<!-- </div> -->
-    <div class="cover-slides1">
-		<img src="images/lorsantraiingbanners.jpg" alt="Banner Image">
-		<div class="overlay-content">
-			<h1>Corporate Trainings</h1>
-			<p>Enhance Communication and Interpersonal Skills, Build Confidence, Foster Emotional Intelligence</p>
-			<button class="btn btn-primary" style="background-color: #663399; color: #FFFFFF;" onclick="showModal()" class="btn">Enquiry</button>
-			
-		</div>
+  function closeModal() {
+	document.getElementById('enquiryModal').style.display = 'none';
+  }
+</script>
+	
+	<!-- Start slides -->
+	<div id="slides" class="cover-slides">
+		<ul class="slides-container">
+			<li class="text-center">
+				<img src="images/banner2.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20" style="text-align: start;"><strong>Corporate Trainings</strong></h1>
+							<p class="m-b-40">Enhance Communication and Interpersonal Skills, Build Confidence, Foster Emotional Intelligence</p>
+							<p><a class="btn btn-lg btn-circle btn-primary" onclick="showModal()">enquire</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-center">
+				<img src="images/banner2.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20" style="text-align: start;"><strong>Personal Coaching</strong></h1>
+							<p class="m-b-40">Enhance Communication and Interpersonal Skills, Build Confidence, Foster Emotional Intelligence</p>
+							<p><a class="btn btn-lg btn-circle btn-primary" onclick="showModal()">enquire</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-center">
+				<img src="images/banner2.jpg" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20" style="text-align: start;"><strong>Genetic Brain Profiling</strong></h1>
+							<p class="m-b-40">Enhance Communication and Interpersonal Skills, Build Confidence, Foster Emotional Intelligence</p>
+							<p><a class="btn btn-lg btn-circle btn-primary" onclick="showModal()">enquire</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
 	</div>
+	<!-- End slides -->
 	<!-- end slides -->
 
 	

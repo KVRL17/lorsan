@@ -278,7 +278,7 @@ button:focus{
 .cottages-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 5px;
     flex-wrap: wrap;
 }
 
@@ -287,7 +287,7 @@ button:focus{
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 350px;
     text-align: left;
     margin-bottom: 20px;
 }
@@ -338,7 +338,7 @@ button:focus{
     }
 
     .cottage-card {
-        width: 90%;
+        width: 100%;
     }
 }
 
@@ -363,6 +363,21 @@ button:focus{
         padding: 8px 16px;
         font-size: 0.8rem;
     }
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 80px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+}
+
+.whatsapp-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .image-containerr {
@@ -450,7 +465,7 @@ button:focus{
 /*------------------------------------------------------------------
     Slider
 -------------------------------------------------------------------*/
-/* 
+
 .cover-slides{
 	height: 100vh;
 }
